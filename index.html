@@ -80,6 +80,9 @@
                 border: none;
                 box-shadow: none;
             }
+            .print-button{
+                display: none;
+            }
         }
 
         a {
@@ -119,6 +122,20 @@
             border-width: 5px;
             border-style: solid;
             border-color: #0056b3 transparent transparent transparent;
+        }
+
+        .print-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .print-button button {
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -169,7 +186,7 @@
 
         <div class="section">
             <h2>Professional Qualifications</h2>
-            <p>All B1 <a href="result.html" target="_blank">module<span class="tooltip">Click to know more</span></a> conducted by DGCA</p>
+            <p>All B1.1 <a href="result.html" target="_blank">module<span class="tooltip">Click to know more</span></a> conducted by DGCA</p>
 
             <p><b>Authorisation:</b> CAT A Authorisation on Q400 fitted with P & W 150 A.</p>
         </div>
@@ -195,6 +212,9 @@
             <h2>Hobbies</h2>
             <p>Guitar, Piano</p>
         </div>
+    </div>
+    <div class="print-button">
+        <button onclick="window.print()">Print Resume</button>
     </div>
 </body>
 
