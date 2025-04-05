@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harish Kumar - Aircraft Maintenance Professional</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #0056b3;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .experience-item {
+            margin-bottom: 15px;
+        }
+
+        .experience-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills-list li {
+            background-color: #e7f1ff;
+            color: #333;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 15px;
+            border: 1px solid #b3d9ff;
+        }
+
+        .qualifications-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .qualifications-list li {
+            margin-bottom: 5px;
+        }
+
+        /* Add print styles */
+        @media print {
+            .container {
+                border: none;
+                box-shadow: none;
+            }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            position: relative; /* Required for absolute positioning of tooltip */
+        }
+
+        a .tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: #0056b3;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        a:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        a .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #0056b3 transparent transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section contact-info">
+            <h1>Harish Kumar</h1>
+            <h4>Certifying Mechanic on Q400</h4>
+            <p>
+                <b>Email:</b>
+                <a href="mailto:Harish.k1lm@gmail.com">Harish.k11m@gmail.com</a>
+            </p>
+            <p><b>Address:</b> 113/547, Ambika Skim-1, Varsamedi, Kachchh, Gujarat-370110</p>
+
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Spicejet Ltd. (2011 - Till Date)</h3>
+                <p>
+                    Working as a Certifying Mechanic on <a href="https://www.google.com/search?q=Q400+aircraft" target="_blank">Q400<span class="tooltip">Click to know more</span></a> in Line Maintenance Department posted in Kandla.
+                </p>
+            </div>
+            <div class="experience-item">
+                <h3>Indamer Company Pvt. Ltd. (2009 - 2011)</h3>
+                <p>
+                    Worked as a Technician in Base Maintenance Department as well as Line Maintenance Department on
+                    <a href="https://www.google.com/search?q=Bell+407+helicopter" target="_blank">Bell 407<span class="tooltip">Click to know more</span></a>,
+                    <a href="https://www.google.com/search?q=Hawker+800+aircraft" target="_blank">Hawker 800/850 XP<span class="tooltip">Click to know more</span></a>,
+                    <a href="https://www.google.com/search?q=Cessna+Citation+CJ2+525A" target="_blank">Cessna Citation CJ2 525A<span class="tooltip">Click to know more</span></a>,
+                    <a href="https://www.google.com/search?q=Super+King+B200+aircraft" target="_blank">Super King B200<span class="tooltip">Click to know more</span></a>, and
+                    <a href="https://www.google.com/search?q=King+Air+C90A+aircraft" target="_blank">King Air C90A/B<span class="tooltip">Click to know more</span></a>.
+                </p>
+            </div>
+            <div class="experience-item">
+                <h3>Deccan Aviation Pvt. Ltd. (2008)</h3>
+                <p>
+                    Worked as an apprentice in BMD and LMD on
+                    <a href="https://www.google.com/search?q=Cessna+Caravan+208B+aircraft" target="_blank">Cessna Caravan 208B<span class="tooltip">Click to know more</span></a>,
+                    <a href="https://www.google.com/search?q=King+Air+C90A+aircraft" target="_blank">King Air C90A<span class="tooltip">Click to know more</span></a>,
+                    <a href="https://www.google.com/search?q=Pilatus+PC+12+aircraft" target="_blank">Pilatus PC 12/45<span class="tooltip">Click to know more</span></a>,
+                    <a href="https://www.google.com/search?q=Bell+407+helicopter" target="_blank">Bell 407<span class="tooltip">Click to know more</span></a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Qualifications</h2>
+            <p>All B1 <a href="result.html" target="_blank">module<span class="tooltip">Click to know more</span></a> conducted by DGCA</p>
+
+            <p><b>Authorisation:</b> CAT A Authorisation on Q400 fitted with P & W 150 A.</p>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <p><b>Aircraft Maintenance Engineering Course:</b> Completed AME Course in Mechanical stream from AAA, Indore (2005 - 2008)</p>
+            <p><b>Higher and Higher Secondary:</b> 10th and 12th in PCM from RBIC, Agra (2000 - 2004)</p>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Aircraft Maintenance</li>
+                <li>Airframe Troubleshooting</li>
+                <li>Engine Troubleshooting</li>
+                <li>Microsoft Office Suite</li>
+                <li>Team Management</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Hobbies</h2>
+            <p>Guitar, Piano</p>
+        </div>
+    </div>
+</body>
+
+</html>
