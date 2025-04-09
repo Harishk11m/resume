@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 10px;
+            margin: 20px;
             line-height: 1.6;
             color: #333;
         }
@@ -16,9 +16,10 @@
         .container {
             max-width: 800px;
             margin: auto;
-            border: 1px solid #ddd;
+            background: white; /* Added background for better visual consistency */
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px; /* Added border-radius for a softer look */
         }
 
         h1,
@@ -27,14 +28,35 @@
             color: #0056b3;
         }
 
-        .section {
-            margin-bottom: 15px;
+        .section-header {
+            cursor: pointer;
+            padding-bottom: 5px;
+            margin: 20px 0 10px;
+            border-bottom: 2px solid #0056b3;
+            color: #2c3e50; /* Changed color for better readability */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .section h2 {
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
+        .section-header h2 {
+            margin-bottom: 0;
+        }
+
+        .section-header::after {
+            content: '▼';
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .section-header.active::after {
+            transform: rotate(-180deg);
+        }
+
+        .collapsible-content {
+            display: none;
+            margin-bottom: 20px;
+            padding-left: 15px; /* Added padding to align with the previous style */
         }
 
         .contact-info p {
@@ -80,15 +102,22 @@
                 border: none;
                 box-shadow: none;
             }
-            .print-button{
+
+            .print-button,
+            .section-header::after {
                 display: none;
+            }
+
+            .collapsible-content {
+                display: block !important;
             }
         }
 
         a {
             color: inherit;
             text-decoration: underline;
-            position: relative; /* Required for absolute positioning of tooltip */
+            position: relative;
+            /* Required for absolute positioning of tooltip */
         }
 
         a .tooltip {
@@ -142,66 +171,140 @@
 
 <body>
     <div class="container">
-        <div class="section contact-info">
-            <h1>Harish Kumar</h1>
-            <h4>Aircraft Maintenance Engineer</h4>
+        <h1>Harish Kumar</h1>
+        <div class="contact-info">
+             <p>9004031037</p>
             <p>
                 <b>Email:</b>
-                <a href="mailto:Harish.k1lm@gmail.com">Harish.k11m@gmail.com</a>
+                <a href="mailto:Harish.k11m@gmail.com">Harish.k11m@gmail.com</a>
             </p>
             <p><b>Address:</b> 113/547, Ambika Skim-1, Varsamedi, Kachchh, Gujarat-370110</p>
-
         </div>
 
         <div class="section">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Spicejet Ltd. (2011 - Till Date)</h3>
-                <p>
-                    Working as a Certifying Mechanic on <a href="https://www.google.com/search?q=Q400+aircraft" target="_blank">Q400<span class="tooltip">Click to know more</span></a> in Line Maintenance Department posted in Kandla.
-                </p>
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Experience</h2>
             </div>
-            <div class="experience-item">
-                <h3>Indamer Company Pvt. Ltd. (2009 - 2011)</h3>
-                <p>
-                    Worked as a Technician in Base Maintenance Department as well as Line Maintenance Department on
-                    <a href="https://www.google.com/search?q=Bell+407+helicopter" target="_blank">Bell 407<span class="tooltip">Click to know more</span></a>,
-                    <a href="https://www.google.com/search?q=Hawker+800+aircraft" target="_blank">Hawker 800/850 XP<span class="tooltip">Click to know more</span></a>,
-                    <a href="https://www.google.com/search?q=Cessna+Citation+CJ2+525A" target="_blank">Cessna Citation CJ2 525A<span class="tooltip">Click to know more</span></a>,
-                    <a href="https://www.google.com/search?q=Super+King+B200+aircraft" target="_blank">Super King B200<span class="tooltip">Click to know more</span></a>, and
-                    <a href="https://www.google.com/search?q=King+Air+C90A+aircraft" target="_blank">King Air C90A/B<span class="tooltip">Click to know more</span></a>.
-                </p>
-            </div>
-            <div class="experience-item">
-                <h3>Deccan Aviation Pvt. Ltd. (2008)</h3>
-                <p>
-                    Worked as an apprentice in BMD and LMD on
-                    <a href="https://www.google.com/search?q=Cessna+Caravan+208B+aircraft" target="_blank">Cessna Caravan 208B<span class="tooltip">Click to know more</span></a>,
-                    <a href="https://www.google.com/search?q=King+Air+C90A+aircraft" target="_blank">King Air C90A<span class="tooltip">Click to know more</span></a>,
-                    <a href="https://www.google.com/search?q=Pilatus+PC+12+aircraft" target="_blank">Pilatus PC 12/45<span class="tooltip">Click to know more</span></a>,
-                    <a href="https://www.google.com/search?q=Bell+407+helicopter" target="_blank">Bell 407<span class="tooltip">Click to know more</span></a>.
-                </p>
+            <div class="section-content">
+                <div class="experience-item">
+                    <h3>Spicejet Ltd. (2011 - Till Date)</h3>
+                    <p>
+                        Working as a Certifying Mechanic on <a href="https://www.google.com/search?q=Q400+aircraft"
+                            target="_blank">Q400<span class="tooltip">Click to know more</span></a> in Line Maintenance
+                        Department posted in Kandla.
+                    </p>
+                </div>
+                <div class="experience-item">
+                    <h3>Indamer Company Pvt. Ltd. (2009 - 2011)</h3>
+                    <p>
+                        Worked as a Technician in Base Maintenance Department as well as Line Maintenance Department on
+                        <a href="https://www.google.com/search?q=Bell+407+helicopter" target="_blank">Bell 407<span
+                                class="tooltip">Click to know more</span></a>,
+                        <a href="https://www.google.com/search?q=Hawker+800+aircraft" target="_blank">Hawker 800/850
+                            XP<span class="tooltip">Click to know more</span></a>,
+                        <a href="https://www.google.com/search?q=Cessna+Citation+CJ2+525A" target="_blank">Cessna Citation
+                            CJ2 525A<span class="tooltip">Click to know more</span></a>,
+                        <a href="https://www.google.com/search?q=Super+King+B200+aircraft" target="_blank">Super King
+                            B200<span class="tooltip">Click to know more</span></a>, and
+                        <a href="https://www.google.com/search?q=King+Air+C90A+aircraft" target="_blank">King Air
+                            C90A/B<span class="tooltip">Click to know more</span></a>.
+                    </p>
+                </div>
+                <div class="experience-item">
+                    <h3>Deccan Aviation Pvt. Ltd. (2008)</h3>
+                    <p>
+                        Worked as an apprentice in BMD and LMD on
+                        <a href="https://www.google.com/search?q=Cessna+Caravan+208B+aircraft" target="_blank">Cessna
+                            Caravan 208B<span class="tooltip">Click to know more</span></a>,
+                        <a href="https://www.google.com/search?q=King+Air+C90A+aircraft" target="_blank">King Air
+                            C90A<span class="tooltip">Click to know more</span></a>,
+                        <a href="https://www.google.com/search?q=Pilatus+PC+12+aircraft" target="_blank">Pilatus PC
+                            12/45<span class="tooltip">Click to know more</span></a>,
+                        <a href="https://www.google.com/search?q=Bell+407+helicopter" target="_blank">Bell 407<span
+                                class="tooltip">Click to know more</span></a>.
+                    </p>
+                </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>Professional Qualifications</h2>
-            <p>All B1.1 <a href="result.html" target="_blank">module<span class="tooltip">Click to know more</span></a> conducted by DGCA</p>
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Professional Qualifications</h2>
+            </div>
+            <div class="section-content">
+                <p>All B1.1 <a href="result.html" target="_blank">module<span class="tooltip">Click to know more</span></a>
+                    conducted by DGCA</p>
 
-            <p><b>Authorisation:</b> CAT A Authorisation on Q400 fitted with P & W 150 A.</p>
+                <p><b>Authorisation:</b> CAT A Authorisation on Q400 fitted with P & W 150 A.</p>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Education</h2>
-         <p><b>AME Course:</b>Mechanical stream from AAA, Indore (2005 - 2008)</p>
-            <p><b>Higher Secondary:</b> 10th and 12th in PCM from RBIC, Agra (2000 - 2004)</p>
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Education</h2>
+            </div>
+            <div class="section-content">
+                <p><b>Aircraft Maintenance Engineering Course:</b> Completed AME Course in Mechanical stream from AAA,
+                    Indore (2005 - 2008)</p>
+                <p><b>Higher and Higher Secondary:</b> 10th and 12th in PCM from RBIC, Agra (2000 - 2004)</p>
+            </div>
         </div>
 
-       
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Skills</h2>
+            </div>
+            <div class="section-content">
+                <ul class="skills-list">
+                    <li>Aircraft Maintenance</li>
+                    <li>Airframe Troubleshooting</li>
+                    <li>Engine Troubleshooting</li>
+                    <li>Microsoft Office Suite</li>
+                    <li>Team Management</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Hobbies</h2>
+            </div>
+            <div class="section-content">
+                <p>Guitar, Piano</p>
+            </div>
+        </div>
     </div>
     <div class="print-button">
         <button onclick="window.print()">Print Resume</button>
     </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const isVisible = content.style.display === "block";
+            content.style.display = isVisible ? "none" : "block";
+            header.classList.toggle("active", !isVisible);
+        }
+
+        // Initially collapse all sections except the contact information
+        document.addEventListener('DOMContentLoaded', function() {
+            const sectionHeaders = document.querySelectorAll('.section-header');
+            sectionHeaders.forEach(header => {
+                const content = header.nextElementSibling;
+                if (content) {
+                    content.style.display = 'none';
+                }
+            });
+
+            // Optionally keep Contact Information open
+            const contactHeader = document.querySelector('.contact-info').previousElementSibling;
+            const contactContent = document.querySelector('.contact-info');
+            if (contactHeader && contactContent) {
+                contactHeader.classList.add('active');
+                contactContent.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>
