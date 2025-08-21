@@ -1,73 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harish Kumar - Aircraft Maintenance Professional</title>
+    <title>Harish Kumar - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white; /* Added background for better visual consistency */
+            font-family: 'Inter', sans-serif;
+            margin: 0;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 12px; /* Added border-radius for a softer look */
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: #0056b3;
-        }
-
-        .section-header {
-            cursor: pointer;
-            padding-bottom: 5px;
-            margin: 20px 0 10px;
-            border-bottom: 2px solid #0056b3;
-            color: #2c3e50; /* Changed color for better readability */
+            background-color: #f4f7f6;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .resume-container {
+            width: 100%;
+            max-width: 850px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header-section {
+            background-color: #2c3e50; /* Dark blue-grey */
+            color: #ffffff;
+            padding: 30px 40px;
+            display: flex;
             align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allows content to wrap on smaller screens */
         }
 
-        .section-header h2 {
-            margin-bottom: 0;
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-grow: 1; /* Allows it to take available space */
+            min-width: 250px; /* Ensures elements don't collapse too much */
         }
 
-        .section-header::after {
-            content: '▼';
-            font-size: 16px;
-            transition: transform 0.2s;
+        .profile-photo-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            flex-shrink: 0; /* Prevents shrinking */
         }
 
-        .section-header.active::after {
-            transform: rotate(-180deg);
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Placeholder for image: You can replace this with your actual image URL */
+            background-color: #ecf0f1; /* Light grey placeholder */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-size: 0.8em;
+            text-align: center;
         }
 
-        .collapsible-content {
-            display: none;
-            margin-bottom: 20px;
-            padding-left: 15px; /* Added padding to align with the previous style */
+        .header-info h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
         }
 
-        .contact-info p {
-            margin: 5px 0;
+        .header-info p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+            font-weight: 300;
+            opacity: 0.9;
         }
 
-        .experience-item {
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Aligns contact info to the right */
+            gap: 8px;
+            font-size: 0.95em;
+            font-weight: 400;
+            text-align: right;
+            min-width: 200px; /* Prevents collapsing */
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: #a2d2ff;
+        }
+
+        .main-content {
+            display: flex;
+            padding: 30px 40px;
+            gap: 30px;
+            flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+        }
+
+        .left-column {
+            flex: 2; /* Takes more space */
+            min-width: 300px;
+        }
+
+        .right-column {
+            flex: 1; /* Takes less space */
+            min-width: 200px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50; /* Dark blue-grey */
             margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3498db; /* Blue accent */
         }
 
-        .experience-item h3 {
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+        }
+
+        .job-title, .degree-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #34495e; /* Slightly lighter dark blue */
+            margin-bottom: 5px;
+        }
+
+        .company-name, .institution-name {
+            font-size: 1em;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .dates-location {
+            font-size: 0.9em;
+            color: #7f8c8d; /* Grey */
+            margin-bottom: 10px;
+        }
+
+        .job-description ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .job-description li {
             margin-bottom: 5px;
         }
 
@@ -76,235 +175,233 @@
             padding: 0;
             display: flex;
             flex-wrap: wrap;
+            gap: 8px;
         }
 
-        .skills-list li {
-            background-color: #e7f1ff;
-            color: #333;
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 15px;
-            border: 1px solid #b3d9ff;
+        .skill-item {
+            background-color: #3498db; /* Blue */
+            color: #ffffff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
         }
 
-        .qualifications-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .qualifications-list li {
-            margin-bottom: 5px;
-        }
-
-        /* Add print styles */
-        @media print {
-            .container {
-                border: none;
-                box-shadow: none;
-            }
-
-            .print-button,
-            .section-header::after {
-                display: none;
-            }
-
-            .collapsible-content {
-                display: block !important;
-            }
-        }
-
-        a {
-            color: inherit;
-            text-decoration: underline;
-            position: relative;
-            /* Required for absolute positioning of tooltip */
-        }
-
-        a .tooltip {
-            visibility: hidden;
-            width: 120px;
-            background-color: #0056b3;
-            color: #fff;
+        .print-button-container {
             text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -60px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        a:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        a .tooltip::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #0056b3 transparent transparent transparent;
+            margin-top: 25px;
         }
 
         .print-button {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .print-button button {
             padding: 10px 20px;
-            background-color: #0056b3;
+            font-size: 1em;
+            background-color: #28a745; /* Green */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .print-button:hover {
+            background-color: #218838;
+        }
+
+        /* Hide print button when printing */
+        @media print {
+            .print-button-container {
+                display: none;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .contact-info {
+                align-items: flex-start;
+                text-align: left;
+                margin-top: 15px;
+            }
+
+            .main-content {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .left-column, .right-column {
+                min-width: unset;
+                width: 100%;
+            }
         }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Harish Kumar</h1>
-        <div class="contact-info">
-             <p>9004031037</p>
-            <p>
-                <b>Email:</b>
-                <a href="mailto:Harish.k11m@gmail.com">Harish.k11m@gmail.com</a>
-            </p>
-            <p><b>Address:</b> 113/547, Ambika Skim-1, Varsamedi, Kachchh, Gujarat-370110</p>
-        </div>
-
-        <div class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Experience</h2>
-            </div>
-            <div class="section-content">
-                <div class="experience-item">
-                    <h3>Spicejet Ltd. (2011 - Till Date)</h3>
-                    <p>
-                        Working as a Certifying Mechanic on <a href="https://www.google.com/search?q=Q400+aircraft"
-                            target="_blank">Q400<span class="tooltip">Click to know more</span></a> in Line Maintenance
-                        Department posted in Kandla.
-                    </p>
+    <div class="resume-container">
+        <header class="header-section">
+            <div class="header-left">
+                <div class="profile-photo-container">
+                    <!-- Paste your image URL here in the src attribute -->
+                    <img src="https://placehold.co/100x100/ecf0f1/7f8c8d?text=Your%20Photo" alt="Profile Photo" class="profile-photo">
                 </div>
-                <div class="experience-item">
-                    <h3>Indamer Company Pvt. Ltd. (2009 - 2011)</h3>
-                    <p>
-                        Worked as a Technician in Base Maintenance Department as well as Line Maintenance Department on
-                        <a href="https://www.google.com/search?q=Bell+407+helicopter" target="_blank">Bell 407<span
-                                class="tooltip">Click to know more</span></a>,
-                        <a href="https://www.google.com/search?q=Hawker+800+aircraft" target="_blank">Hawker 800/850
-                            XP<span class="tooltip">Click to know more</span></a>,
-                        <a href="https://www.google.com/search?q=Cessna+Citation+CJ2+525A" target="_blank">Cessna Citation
-                            CJ2 525A<span class="tooltip">Click to know more</span></a>,
-                        <a href="https://www.google.com/search?q=Super+King+B200+aircraft" target="_blank">Super King
-                            B200<span class="tooltip">Click to know more</span></a>, and
-                        <a href="https://www.google.com/search?q=King+Air+C90A+aircraft" target="_blank">King Air
-                            C90A/B<span class="tooltip">Click to know more</span></a>.
-                    </p>
-                </div>
-                <div class="experience-item">
-                    <h3>Deccan Aviation Pvt. Ltd. (2008)</h3>
-                    <p>
-                        Worked as an apprentice in BMD and LMD on
-                        <a href="https://www.google.com/search?q=Cessna+Caravan+208B+aircraft" target="_blank">Cessna
-                            Caravan 208B<span class="tooltip">Click to know more</span></a>,
-                        <a href="https://www.google.com/search?q=King+Air+C90A+aircraft" target="_blank">King Air
-                            C90A<span class="tooltip">Click to know more</span></a>,
-                        <a href="https://www.google.com/search?q=Pilatus+PC+12+aircraft" target="_blank">Pilatus PC
-                            12/45<span class="tooltip">Click to know more</span></a>,
-                        <a href="https://www.google.com/search?q=Bell+407+helicopter" target="_blank">Bell 407<span
-                                class="tooltip">Click to know more</span></a>.
-                    </p>
+                <div class="header-info">
+                    <h1>HARISH KUMAR</h1>
+                    <p>AME, Q400</p>
                 </div>
             </div>
-        </div>
+            <div class="contact-info">
+                <p>Agra, Uttar Pradesh, India</p>
+                <a href="mailto:harish.k11m@gmail.com">harish.k11m@gmail.com</a>
+                <p>9004031037</p>
+                <a href="https://linkedin.com/in/harish-kumar-408a2373" target="_blank">linkedin.com/in/harish-kumar-408a2373</a>
+            </div>
+        </header>
 
-        <div class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Professional Qualifications</h2>
-            </div>
-            <div class="section-content">
-                <p>All B1.1 <a href="result.html" target="_blank">module<span class="tooltip">Click to know more</span></a>
-                    conducted by DGCA</p>
+        <main class="main-content">
+            <div class="left-column">
+                <section class="section experience-section">
+                    <h2 class="section-title">Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">CERTIFYING MECHANIC ON Q400</div>
+                        <div class="company-name">Spicejet Limited</div>
+                        <div class="dates-location">
+                            <span id="current-job-dates">May 2018 - Present</span> 
+                            (<span id="current-job-duration"></span>)
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Holding CAT-A authorisation on Q400 fitted P & W 150 A engine.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <p><b>Authorisation:</b> CAT A Authorisation on Q400 fitted with P & W 150 A.</p>
-            </div>
-        </div>
+                    <div class="experience-item">
+                        <div class="job-title">SR. AIRCRAFT MAINTENANCE TECHNICIAN</div>
+                        <div class="company-name">Spicejet Limited</div>
+                        <div class="dates-location">Aug 2011 - May 2018 (6 years 10 months)</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Worked as a Sr. Technician in line and major maintenance on the following type of aircraft under the supervision of licensed AME: Boeing 737 800/900 ER fitted with CFM 56-7 engine, Q400 fitted P & W 150A engine.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-        <div class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Education</h2>
-            </div>
-            <div class="section-content">
-                <p><b>Aircraft Maintenance Engineering Course:</b> Completed AME Course in Mechanical stream from AAA,
-                    Indore (2005 - 2008)</p>
-                <p><b>Higher and Higher Secondary:</b> 10th and 12th in PCM from RBIC, Agra (2000 - 2004)</p>
-            </div>
-        </div>
+                    <div class="experience-item">
+                        <div class="job-title">Aircraft Maintenance Technician</div>
+                        <div class="company-name">INDAMER COMPANY PVT LTD</div>
+                        <div class="dates-location">Mar 2009 - Aug 2011 (2 years 6 months)</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Worked as a Jr. Technician in line and major maintenance on the following type of aircraft under the supervision of licensed AME: Hawker 800/850XP aircraft fitted with TFE731-5 BR-1H Turbofan engine, Cessna Citation CJ2 525A aircraft fitted with William Rolls FJ44-2C engine, B-200 aircraft fitted with P&W PT6A-42 engine, B-200C aircraft fitted with P&W PT6A-42 engine.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-        <div class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Skills</h2>
+                    <div class="experience-item">
+                        <div class="job-title">Apprenticeship</div>
+                        <div class="company-name">DECCAN AVIATION LTD.</div>
+                        <div class="dates-location">Apr 2008 - Sep 2008 (6 months)</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Assisted in carrying out following inspection on the mentioned aircraft: King Air C90A aircraft fitted with P&W PT 6A-21 engine, Bell 407 helicopter fitted with RR250-C47B engine.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div class="section-content">
-                <ul class="skills-list">
-                    <li>Aircraft Maintenance</li>
-                    <li>Airframe Troubleshooting</li>
-                    <li>Engine Troubleshooting</li>
-                    <li>Microsoft Office Suite</li>
-                    <li>Team Management</li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Hobbies</h2>
+            <div class="right-column">
+                <section class="section education-section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="degree-title">DGCA MODULES</div>
+                        <div class="institution-name">All B1 Module</div>
+                        <div class="dates-location">Cleared all B1 Module <a href="result.html">(click for result)</a></div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="degree-title">AME LICENSE COURSE, MECHANICAL STREAM</div>
+                        <div class="institution-name">ACADEMY OF AEROSPACE AND AVIATION, INDORE</div>
+                        <div class="dates-location">2005 - 2008</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>AME diploma</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="degree-title">H.Sc & S.Sc. in Physics, Chemistry and Maths</div>
+                        <div class="institution-name">RADHA BALLABH INTER COLLEGE, AGRA</div>
+                        <div class="dates-location">2000 - 2004</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Higher secondary and senior secondary</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section skills-section">
+                    <h2 class="section-title">Skills</h2>
+                    <ul class="skills-list">
+                        <li class="skill-item">Aircraft Engines</li>
+                        <li class="skill-item">Aircraft Maintenance</li>
+                        <li class="skill-item">Aircraft Systems</li>
+                        <li class="skill-item">Troubleshooting</li>
+                        <li class="skill-item">Maintenance & Repair</li>
+                        <li class="skill-item">Management</li>
+                        <li class="skill-item">Airframe</li>
+                        <li class="skill-item">AMOS</li>
+                        <li class="skill-item">Preventive Maintenance</li>
+                    </ul>
+                </section>
             </div>
-            <div class="section-content">
-                <p>Guitar, Piano</p>
-            </div>
-        </div>
-    </div>
-    <div class="print-button">
-        <button onclick="window.print()">Print Resume</button>
+        </main>
     </div>
 
     <script>
-        function toggleSection(header) {
-            const content = header.nextElementSibling;
-            const isVisible = content.style.display === "block";
-            content.style.display = isVisible ? "none" : "block";
-            header.classList.toggle("active", !isVisible);
-        }
-
-        // Initially collapse all sections except the contact information
         document.addEventListener('DOMContentLoaded', function() {
-            const sectionHeaders = document.querySelectorAll('.section-header');
-            sectionHeaders.forEach(header => {
-                const content = header.nextElementSibling;
-                if (content) {
-                    content.style.display = 'none';
-                }
-            });
+            // Function to calculate duration
+            function calculateDuration(startDateString) {
+                const startDate = new Date(startDateString);
+                const currentDate = new Date();
 
-            // Optionally keep Contact Information open
-            const contactHeader = document.querySelector('.contact-info').previousElementSibling;
-            const contactContent = document.querySelector('.contact-info');
-            if (contactHeader && contactContent) {
-                contactHeader.classList.add('active');
-                contactContent.style.display = 'block';
+                let years = currentDate.getFullYear() - startDate.getFullYear();
+                let months = currentDate.getMonth() - startDate.getMonth();
+
+                if (months < 0) {
+                    years--;
+                    months += 12;
+                }
+
+                const yearString = years > 0 ? `${years} year${years > 1 ? 's' : ''}` : '';
+                const monthString = months > 0 ? `${months} month${months > 1 ? 's' : ''}` : '';
+
+                if (yearString && monthString) {
+                    return `${yearString} ${monthString}`;
+                } else if (yearString) {
+                    return yearString;
+                } else if (monthString) {
+                    return monthString;
+                } else {
+                    return "Less than a month";
+                }
+            }
+
+            // Update the current job's duration
+            const currentJobDurationElement = document.getElementById('current-job-duration');
+            if (currentJobDurationElement) {
+                const startDate = 'May 1, 2018'; // Set the start date for automatic calculation
+                currentJobDurationElement.textContent = calculateDuration(startDate);
             }
         });
     </script>
 </body>
-
 </html>
